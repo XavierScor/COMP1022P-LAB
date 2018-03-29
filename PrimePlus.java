@@ -2,29 +2,28 @@ import java.util.Scanner;
 
 public class PrimePlus
 {
-    public static void main(String[] args)
-    {
-	int userInput = 0;
-	Scanner sc = new Scanner(System.in);
-	
-	System.out.print("Enter a number: ");
-	userInput = sc.nextInt();
+	public static void main(String[] args)
+	{
+		int userInput = 0;
+		int count = 0;
+		int step = 0;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Eneter a number: ");
+		userInput = sc.nextInt();
+		
+	    while(count <= userInput)
+		{
+	    	step++;
+	    	
+		    if(Prime.checkPrime(step))
+		    {
+			    System.out.print(step + "\t");
+			    count++;
+		    }
+		}
+		
+		sc.close();
+	}
 
-	for(int j = 1; j <= userInput; j++)
-	       outputPrime(j);
-
-	sc.close();
-    }
-
-    public static void outputPrime(int num)
-    {
-	int check = 0;
-	for(int i = 2; i < num; i++)
-	    {
-		if(num % i == 0)
-		    check += 1;  
-	    }
-	if(check == 0)
-	    System.out.print(num + "\t");
-    }
 }
